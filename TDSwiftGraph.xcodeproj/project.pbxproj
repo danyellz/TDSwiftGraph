@@ -142,6 +142,7 @@
 		EDCC09B51EA5B8980098E7E2 /* TDSwiftGraph */ = {
 			isa = PBXGroup;
 			children = (
+				EDCC09F51EA5D1E30098E7E2 /* Extensions */,
 				EDCC09EE1EA5CDBD0098E7E2 /* Custom */,
 				EDCC09E41EA5CB2C0098E7E2 /* GraphControllers */,
 				EDCC09B61EA5B8980098E7E2 /* AppDelegate.swift */,
@@ -150,7 +151,6 @@
 				EDCC09BD1EA5B8980098E7E2 /* Assets.xcassets */,
 				EDCC09BF1EA5B8980098E7E2 /* LaunchScreen.storyboard */,
 				EDCC09C21EA5B8980098E7E2 /* Info.plist */,
-				EDCC09F31EA5D1150098E7E2 /* String.swift */,
 			);
 			path = TDSwiftGraph;
 			sourceTree = "<group>";
@@ -201,6 +201,14 @@
 				EDCC09EF1EA5CDCE0098E7E2 /* CustomTimeInterval.swift */,
 			);
 			name = Custom;
+			sourceTree = "<group>";
+		};
+		EDCC09F51EA5D1E30098E7E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDCC09F31EA5D1150098E7E2 /* String.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

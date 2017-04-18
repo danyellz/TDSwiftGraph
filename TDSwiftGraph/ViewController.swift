@@ -9,9 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var tdGraphNewViewController = TDGraphNewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        tdGraphNewViewController.dataSource = self
+        tdGraphNewViewController.userGraph = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
