@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: - Allows embedding UIViewControllers and their functionality within the contraints of a UIView
+
 struct EmbedChildViewController {
     static func embed(
         viewControllerId: UIViewController,

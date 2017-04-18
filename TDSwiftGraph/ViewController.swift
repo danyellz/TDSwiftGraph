@@ -20,25 +20,30 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
     // MARK: - View data
     var lastSection = -1
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set up graph data
         tdGraphNewViewController.dataSource = self
         tdGraphNewViewController.userGraph = true
-        // Do any additional setup after loading the view, typically from a nib.
         
         setupGraph()
     }
     
+    //Setup graph layout/embed the graph within a UIView subviewed onto the viewcontroller
     fileprivate func setupGraph() {
         
-        tdGraphNewViewController.view.frame = graphWindow.bounds
+        tdGraphNewViewController.view.frame = graphWindow.bounds // Set graph frame to embedded UIView
         
         view.sv(graphWindow)
         view.layout(
             0,
-            |graphWindow| ~ view.frame.height / 2
+            |graphWindow| ~ view.frame.height / 2 // Graph container height
         )
+        
+        // MARK: - Additional layouts
         
         view.backgroundColor = UIColor.white
         
@@ -50,11 +55,15 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Graph protocols
+    
     func dataForGraph(section: Int, completionHandler: @escaping ((x: [Double], y: [Double], y1: [Double], balance: [Double]), Bool) -> Void) {
         
 //        if lastSection != section {
 //            cacheFired = false
 //        }
+        
+        // NOTE: - Spoofed data
         self.lastSection = section
         print(section)
         

@@ -23,7 +23,9 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
         setupView()
     }
     
-    func setupView() {
+    // MARK: - Graph layout which dictates layout of objects from parent (base)
+    
+    fileprivate func setupView() {
         view.sv(graphView, toolbarTimePeriod)
         view.layout(
             130,
@@ -32,7 +34,7 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
             |toolbarTimePeriod| ~ 33
         )
         
-        //MARK: - Initial layouts
+        //MARK: - Additional layouts
         
         view.backgroundColor = UIColor.white
         
@@ -132,6 +134,8 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
         attributedText.setAttributes([NSForegroundColorAttributeName : UIColor.cyan], range: NSMakeRange(0, indexSpace!))
         labelSelectedPoint.attributedText = attributedText
     }
+    
+    // Disable swipe for parent viewcontroller while the embedded graph points are discovered
     
 //    override func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceDraggedEvent event: UIEvent, at point: CGPoint) -> Bool {
 //        (self.parent as? UserPortfolioViewController)?.userHoldingsTable.isScrollEnabled = false

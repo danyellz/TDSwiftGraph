@@ -16,6 +16,8 @@ extension NSDate {
         return calander.dateComponents(calComponents, from: self as Date, to: Date())
     }
     
+    // MARK: - Method to modify NSDate string to be compatible with graph. For tab bar (W,M,Y) selection updates.
+    
     public var timeAgoForFeed: String {
         let components = self.dateComponents()
         
