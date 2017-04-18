@@ -21,6 +21,8 @@
 		EDCC09EB1EA5CC010098E7E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCC09EA1EA5CC010098E7E2 /* QuartzCore.framework */; };
 		EDCC09ED1EA5CC120098E7E2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCC09EC1EA5CC120098E7E2 /* CoreImage.framework */; };
 		EDCC09F01EA5CDCE0098E7E2 /* CustomTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09EF1EA5CDCE0098E7E2 /* CustomTimeInterval.swift */; };
+		EDCC09F21EA5D06C0098E7E2 /* TDGraphNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */; };
+		EDCC09F41EA5D1150098E7E2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F31EA5D1150098E7E2 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		EDCC09EA1EA5CC010098E7E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EDCC09EC1EA5CC120098E7E2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		EDCC09EF1EA5CDCE0098E7E2 /* CustomTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeInterval.swift; sourceTree = "<group>"; };
+		EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDGraphNewController.swift; sourceTree = "<group>"; };
+		EDCC09F31EA5D1150098E7E2 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				EDCC09BD1EA5B8980098E7E2 /* Assets.xcassets */,
 				EDCC09BF1EA5B8980098E7E2 /* LaunchScreen.storyboard */,
 				EDCC09C21EA5B8980098E7E2 /* Info.plist */,
+				EDCC09F31EA5D1150098E7E2 /* String.swift */,
 			);
 			path = TDSwiftGraph;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				EDCC09E51EA5CB640098E7E2 /* TDBaseGraphController.swift */,
+				EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */,
 			);
 			name = GraphControllers;
 			sourceTree = "<group>";
@@ -478,10 +484,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCC09F41EA5D1150098E7E2 /* String.swift in Sources */,
 				EDCC09B91EA5B8980098E7E2 /* ViewController.swift in Sources */,
 				EDCC09E61EA5CB640098E7E2 /* TDBaseGraphController.swift in Sources */,
 				EDCC09F01EA5CDCE0098E7E2 /* CustomTimeInterval.swift in Sources */,
 				EDCC09B71EA5B8980098E7E2 /* AppDelegate.swift in Sources */,
+				EDCC09F21EA5D06C0098E7E2 /* TDGraphNewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
