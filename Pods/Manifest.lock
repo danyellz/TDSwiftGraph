@@ -1,0 +1,15 @@
+PODS:
+  - CorePlot (2.2)
+  - SteviaLayout (3.1.3)
+
+DEPENDENCIES:
+  - CorePlot
+  - SteviaLayout
+
+SPEC CHECKSUMS:
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
+  SteviaLayout: 807c742a8e4bcb94f47f018b23873a40f1f1cc1d
+
+PODFILE CHECKSUM: f054435e8b4a019adc56cc117b74693a01d9460e
+
+COCOAPODS: 1.2.1
