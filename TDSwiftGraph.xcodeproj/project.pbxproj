@@ -24,6 +24,7 @@
 		EDCC09F21EA5D06C0098E7E2 /* TDGraphNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */; };
 		EDCC09F41EA5D1150098E7E2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F31EA5D1150098E7E2 /* String.swift */; };
 		EDCC09F71EA5D4B40098E7E2 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F61EA5D4B40098E7E2 /* NSDate.swift */; };
+		EDCC09F91EA5D6820098E7E2 /* EmbedChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F81EA5D6820098E7E2 /* EmbedChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDGraphNewController.swift; sourceTree = "<group>"; };
 		EDCC09F31EA5D1150098E7E2 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EDCC09F61EA5D4B40098E7E2 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		EDCC09F81EA5D6820098E7E2 /* EmbedChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedChildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				EDCC09EF1EA5CDCE0098E7E2 /* CustomTimeInterval.swift */,
+				EDCC09F81EA5D6820098E7E2 /* EmbedChildViewController.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCC09F41EA5D1150098E7E2 /* String.swift in Sources */,
+				EDCC09F91EA5D6820098E7E2 /* EmbedChildViewController.swift in Sources */,
 				EDCC09B91EA5B8980098E7E2 /* ViewController.swift in Sources */,
 				EDCC09E61EA5CB640098E7E2 /* TDBaseGraphController.swift in Sources */,
 				EDCC09F01EA5CDCE0098E7E2 /* CustomTimeInterval.swift in Sources */,

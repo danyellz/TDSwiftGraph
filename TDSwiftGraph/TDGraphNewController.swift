@@ -32,6 +32,10 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
             |toolbarTimePeriod| ~ 33
         )
         
+        //MARK: - Initial layouts
+        
+        view.backgroundColor = UIColor.white
+        
         let barItemAttributes = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15.0)]
         barButtonItem1D.setTitleTextAttributes(barItemAttributes, for: UIControlState.normal)
         barButtonItem1M.setTitleTextAttributes(barItemAttributes, for: UIControlState.normal)
