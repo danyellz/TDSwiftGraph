@@ -26,9 +26,11 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         tdGraphNewViewController.dataSource = self
         tdGraphNewViewController.userGraph = true
         // Do any additional setup after loading the view, typically from a nib.
+        
+        setupGraph()
     }
     
-    func setupGraph() {
+    fileprivate func setupGraph() {
         
         tdGraphNewViewController.view.frame = graphWindow.bounds
         
@@ -37,6 +39,8 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
             0,
             |graphWindow| ~ view.frame.height / 2
         )
+        
+        view.backgroundColor = UIColor.white
         
         EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow) // Embed the graph within UIView
     }

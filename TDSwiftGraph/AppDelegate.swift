@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupExample() {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = TDGraphNewController()
+        window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
     }
 
