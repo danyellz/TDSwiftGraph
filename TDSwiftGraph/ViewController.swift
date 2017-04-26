@@ -11,8 +11,7 @@ import Stevia
 
 class ViewController: UIViewController, TDGraphViewControllerDataSource {
     
-    // MARK: - Custom Controllers
-    var tdGraphNewViewController = TDGraphNewController()
+
     
     // MARK: - View objects
     var graphWindow = UIView()
@@ -26,8 +25,8 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         super.viewDidLoad()
         
         //Set up graph data
-        tdGraphNewViewController.dataSource = self
-        tdGraphNewViewController.userGraph = true
+//        tdGraphNewViewController.dataSource = self
+//        tdGraphNewViewController.userGraph = true
         
         setupGraph()
     }
@@ -35,7 +34,7 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
     //Setup graph layout/embed the graph within a UIView subviewed onto the viewcontroller
     fileprivate func setupGraph() {
         
-        tdGraphNewViewController.view.frame = graphWindow.bounds // Set graph frame to embedded UIView
+//        tdGraphNewViewController.view.frame = graphWindow.bounds // Set graph frame to embedded UIView
         
         view.sv(graphWindow)
         view.layout(
@@ -47,7 +46,7 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         
         view.backgroundColor = UIColor.white
         
-        EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow) // Embed the graph within UIView
+//        EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow) // Embed the graph within UIView
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,12 +73,14 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         var balanceArr = [Double]()
         for i in 0 ..<  40 { // Plot 40 random data points
             let x = NSDate().timeAgoForFeed
-            let y = 1.2 * Double(arc4random()) / Double(UInt32.max) + 1.2
-            let bal = Double(arc4random_uniform(UInt32(25.00))) + 2
+            let y = 1 * Double(arc4random()) / Double(UInt32.max)
+            let bal = Double(arc4random_uniform(UInt32(25.00)))
             xArr.append(NSDate().timeIntervalSince1970)
             yArr.append(y)
             yyArr.append(0.0)
             balanceArr.append(bal)
+            
+            print("COORD: x:\(x), y:\(y), bal: \(bal)")
         }
         
         let dataArr = (x: xArr, y: yArr, y1: yyArr, balance: balanceArr)
