@@ -11,7 +11,11 @@ import Stevia
 
 class ViewController: UIViewController, TDGraphViewControllerDataSource {
     
-
+    lazy fileprivate var tdRegularGraph: TDGraphView = {
+        let graph = TDGraphView()
+        graph.mainLineColor = UIColor.red
+        return graph
+    }()
     
     // MARK: - View objects
     var graphWindow = UIView()
