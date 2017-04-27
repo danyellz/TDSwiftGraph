@@ -25,6 +25,7 @@
 		EDCC09F41EA5D1150098E7E2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F31EA5D1150098E7E2 /* String.swift */; };
 		EDCC09F71EA5D4B40098E7E2 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F61EA5D4B40098E7E2 /* NSDate.swift */; };
 		EDCC09F91EA5D6820098E7E2 /* EmbedChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09F81EA5D6820098E7E2 /* EmbedChildViewController.swift */; };
+		EDFC9B251EB161BC00647424 /* TDSwiftGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFC9B241EB161BC00647424 /* TDSwiftGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		EDCC09F31EA5D1150098E7E2 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EDCC09F61EA5D4B40098E7E2 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		EDCC09F81EA5D6820098E7E2 /* EmbedChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedChildViewController.swift; sourceTree = "<group>"; };
+		EDFC9B241EB161BC00647424 /* TDSwiftGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDSwiftGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				EDCC09E51EA5CB640098E7E2 /* TDBaseGraphController.swift */,
 				EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */,
+				EDFC9B241EB161BC00647424 /* TDSwiftGraph.swift */,
 			);
 			name = GraphControllers;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				EDCC09E61EA5CB640098E7E2 /* TDBaseGraphController.swift in Sources */,
 				EDCC09F01EA5CDCE0098E7E2 /* CustomTimeInterval.swift in Sources */,
 				EDCC09F71EA5D4B40098E7E2 /* NSDate.swift in Sources */,
+				EDFC9B251EB161BC00647424 /* TDSwiftGraph.swift in Sources */,
 				EDCC09B71EA5B8980098E7E2 /* AppDelegate.swift in Sources */,
 				EDCC09F21EA5D06C0098E7E2 /* TDGraphNewController.swift in Sources */,
 			);
