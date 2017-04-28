@@ -12,7 +12,7 @@ import UIKit
 
 class TDGraphView: CPTGraphHostingView {
     
-    var delegate: UIViewController? = nil
+    var delegate: UIViewController?
     
     @IBInspectable open var mainLineColor: UIColor {
         get {
@@ -41,11 +41,9 @@ class TDGraphView: CPTGraphHostingView {
         @NSManaged var mainLineColor: UIColor
         @NSManaged var dotIndicatorColor: UIColor?
         
-        var graphDelegate: UIViewController? = nil
+        var graphDelegate: UIViewController?
         
         func setupGraph() {
-            
-            self.backgroundColor = UIColor.white.cgColor
         
             var plot = CPTScatterPlot()
             let selectionPlot = CPTScatterPlot()
