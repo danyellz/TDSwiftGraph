@@ -11,11 +11,7 @@ import Stevia
 
 class ViewController: UIViewController, TDGraphViewControllerDataSource {
     
-    lazy fileprivate var tdRegularGraph: TDGraphView = {
-        let graph = TDGraphView()
-        graph.mainLineColor = UIColor.red
-        return graph
-    }()
+    var tdGraphNewViewController = TDGraphNewController()
     
     // MARK: - View objects
     var graphWindow = UIView()
@@ -29,8 +25,8 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         super.viewDidLoad()
         
         //Set up graph data
-//        tdGraphNewViewController.dataSource = self
-//        tdGraphNewViewController.userGraph = true
+        tdGraphNewViewController.dataSource = self
+        tdGraphNewViewController.userGraph = true
         
         setupGraph()
     }
@@ -38,7 +34,7 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
     //Setup graph layout/embed the graph within a UIView subviewed onto the viewcontroller
     fileprivate func setupGraph() {
         
-//        tdGraphNewViewController.view.frame = graphWindow.bounds // Set graph frame to embedded UIView
+        tdGraphNewViewController.view.frame = graphWindow.bounds // Set graph frame to embedded UIView
         
         view.sv(graphWindow)
         view.layout(
@@ -50,21 +46,21 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         
         view.backgroundColor = UIColor.white
         
-//        EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow) // Embed the graph within UIView
+        // Embed the graph within UIView
+        EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Graph protocols
+}
+
+// MARK: - Graph protocols
+
+extension ViewController {
     
     func dataForGraph(section: Int, completionHandler: @escaping ((x: [Double], y: [Double], y1: [Double], balance: [Double]), Bool) -> Void) {
-        
-//        if lastSection != section {
-//            cacheFired = false
-//        }
         
         // NOTE: - Spoofed data
         self.lastSection = section
@@ -91,7 +87,5 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
         
         completionHandler(dataArr, false)
     }
-
-
 }
 

@@ -13,7 +13,7 @@ import Stevia
 
 class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     
-    var toolbarTimePeriod: UIToolbar = UIToolbar()
+    var toolbarTimePeriod = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +26,18 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     // MARK: - Graph layout which dictates layout of objects from parent (base)
     
     fileprivate func setupView() {
+
         view.sv(graphView, toolbarTimePeriod)
         view.layout(
-            130,
-            |graphView| ~ view.frame.height / 2,
+            0,
+            |-graphView-| ~ view.frame.height / 2,
             0,
             |toolbarTimePeriod| ~ 33
         )
         
         //MARK: - Additional layouts
         
-        view.backgroundColor = UIColor.white
+//        view.backgroundColor = UIColor.white
         
         let barItemAttributes = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15.0)]
         barButtonItem1D.setTitleTextAttributes(barItemAttributes, for: UIControlState.normal)
@@ -151,7 +152,6 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     
     override func loadGraph(data: (x: [Double], y: [Double], y1: [Double], balance: [Double]), allPoints: Bool) {
         
-        print("Loading graph in SessaNewVC")
         super.loadGraph(data: data, allPoints: allPoints)
     }
     

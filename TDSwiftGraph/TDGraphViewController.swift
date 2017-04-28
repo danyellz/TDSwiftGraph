@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class TDGraphViewController: UIViewController {
     
+    lazy fileprivate var tdBaseGraph: TDGraphView = {
+        let graph = TDGraphView()
+//        graph.delegate = self
+        graph.mainLineColor = UIColor.red
+        return graph
+    }()
 }
