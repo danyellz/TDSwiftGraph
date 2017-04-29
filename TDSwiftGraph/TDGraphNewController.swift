@@ -13,7 +13,7 @@ import Stevia
 
 class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     
-    var toolbarTimePeriod: UIToolbar = UIToolbar()
+    var toolbarTimePeriod = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     // MARK: - Graph layout which dictates layout of objects from parent (base)
     
     fileprivate func setupView() {
+
         view.sv(graphView, toolbarTimePeriod)
         view.layout(
             130,
@@ -36,7 +37,7 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
         
         //MARK: - Additional layouts
         
-        view.backgroundColor = UIColor.white
+        graphView.backgroundColor = UIColor.lightGray
         
         let barItemAttributes = [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15.0)]
         barButtonItem1D.setTitleTextAttributes(barItemAttributes, for: UIControlState.normal)
@@ -137,21 +138,20 @@ class TDGraphNewController: TDGraphBaseViewController, UIToolbarDelegate {
     
     // Disable swipe for parent viewcontroller while the embedded graph points are discovered
     
-//    override func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceDraggedEvent event: UIEvent, at point: CGPoint) -> Bool {
+    override func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceDraggedEvent event: UIEvent, at point: CGPoint) -> Bool {
 //        (self.parent as? UserPortfolioViewController)?.userHoldingsTable.isScrollEnabled = false
-//        //        (self.parentViewController as? UserPortfolioViewController)?.tabBarController?.swipeDisable = true
-//        return super.plotSpace(space, shouldHandlePointingDeviceDraggedEvent: event, at: point)
-//    }
-//    
-//    override func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceUp event: UIEvent, at point: CGPoint) -> Bool {
+        //        (self.parentViewController as? UserPortfolioViewController)?.tabBarController?.swipeDisable = true
+        return super.plotSpace(space, shouldHandlePointingDeviceDraggedEvent: event, at: point)
+    }
+    
+    override func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceUp event: UIEvent, at point: CGPoint) -> Bool {
 //        (self.parent as? UserPortfolioViewController)?.userHoldingsTable.isScrollEnabled = true
-//        //        (self.parentViewController as? UserPortfolioViewController)?.tabBarController?.swipeDisable = false
-//        return super.plotSpace(space, shouldHandlePointingDeviceDraggedEvent: event, at: point)
-//    }
+        //        (self.parentViewController as? UserPortfolioViewController)?.tabBarController?.swipeDisable = false
+        return super.plotSpace(space, shouldHandlePointingDeviceDraggedEvent: event, at: point)
+    }
     
     override func loadGraph(data: (x: [Double], y: [Double], y1: [Double], balance: [Double]), allPoints: Bool) {
         
-        print("Loading graph in SessaNewVC")
         super.loadGraph(data: data, allPoints: allPoints)
     }
     
