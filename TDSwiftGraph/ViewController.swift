@@ -42,9 +42,8 @@ class ViewController: UIViewController, TDGraphViewControllerDataSource {
             |graphWindow| ~ view.frame.height / 2 // Graph container height
         )
         
-        // MARK: - Additional layouts
         
-        view.backgroundColor = UIColor.white
+        // MARK: - Additional layoutss
         
         // Embed the graph within UIView
         EmbedChildViewController.embed(viewControllerId: tdGraphNewViewController, containerViewController: self, containerView: graphWindow)

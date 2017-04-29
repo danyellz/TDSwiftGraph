@@ -10,7 +10,6 @@
 		744E88058378A897963E502E /* Pods_TDSwiftGraphUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631DB0B3D30768F37E8FDB0 /* Pods_TDSwiftGraphUITests.framework */; };
 		984AD5A16C5332AF69875C46 /* Pods_TDSwiftGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06137B85B1C51716620D0AFB /* Pods_TDSwiftGraph.framework */; };
 		E45BE37D6ADBC89D811A5862 /* Pods_TDSwiftGraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90548109F85E652B6E33488 /* Pods_TDSwiftGraphTests.framework */; };
-		ED37B6EF1EB16A6F00AD92EE /* TDGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED37B6EE1EB16A6F00AD92EE /* TDGraphViewController.swift */; };
 		EDCC09B71EA5B8980098E7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09B61EA5B8980098E7E2 /* AppDelegate.swift */; };
 		EDCC09B91EA5B8980098E7E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09B81EA5B8980098E7E2 /* ViewController.swift */; };
 		EDCC09BC1EA5B8980098E7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC09BA1EA5B8980098E7E2 /* Main.storyboard */; };
@@ -56,7 +55,6 @@
 		A631DB0B3D30768F37E8FDB0 /* Pods_TDSwiftGraphUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDSwiftGraphUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2436524B776E1427599E0C8 /* Pods-TDSwiftGraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C90548109F85E652B6E33488 /* Pods_TDSwiftGraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDSwiftGraphTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED37B6EE1EB16A6F00AD92EE /* TDGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDGraphViewController.swift; sourceTree = "<group>"; };
 		EDCC09B31EA5B8980098E7E2 /* TDSwiftGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDSwiftGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC09B61EA5B8980098E7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDCC09B81EA5B8980098E7E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				EDCC09E51EA5CB640098E7E2 /* TDBaseGraphController.swift */,
 				EDCC09F11EA5D06C0098E7E2 /* TDGraphNewController.swift */,
 				EDFC9B241EB161BC00647424 /* TDSwiftGraph.swift */,
-				ED37B6EE1EB16A6F00AD92EE /* TDGraphViewController.swift */,
 			);
 			name = GraphControllers;
 			sourceTree = "<group>";
@@ -513,7 +510,6 @@
 				EDFC9B251EB161BC00647424 /* TDSwiftGraph.swift in Sources */,
 				EDCC09B71EA5B8980098E7E2 /* AppDelegate.swift in Sources */,
 				EDCC09F21EA5D06C0098E7E2 /* TDGraphNewController.swift in Sources */,
-				ED37B6EF1EB16A6F00AD92EE /* TDGraphViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

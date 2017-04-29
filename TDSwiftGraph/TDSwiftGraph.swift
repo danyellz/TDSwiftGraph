@@ -25,11 +25,13 @@ class TDGraphView: CPTGraphHostingView {
     }
 
     // MARK: - Custom Base Layer
-    fileprivate var graphLayer: GraphLayer! {
+    var graphLayer: GraphLayer! {
         get {
             let viewLayer = GraphLayer()
             viewLayer.graphDelegate = delegate
             viewLayer.setupGraph()
+            self.hostedGraph = viewLayer
+            viewLayer.defaultPlotSpace?.delegate = delegate as? CPTPlotSpaceDelegate
             return viewLayer
         }
     }
@@ -45,15 +47,15 @@ class TDGraphView: CPTGraphHostingView {
         
         func setupGraph() {
         
-            var plot = CPTScatterPlot()
+            let plot = CPTScatterPlot()
             let selectionPlot = CPTScatterPlot()
             let areaSelectionPlot = CPTScatterPlot()
-            var zeroLine = CPTScatterPlot()
-            var hideousLine = CPTScatterPlot()
-            var hideousLine2 = CPTScatterPlot()
+            let zeroLine = CPTScatterPlot()
+            let hideousLine = CPTScatterPlot()
+            let hideousLine2 = CPTScatterPlot()
             
-            var labelMainSelectedValue = UILabel()
-            var labelSelectedPoint = UILabel()
+//            var labelMainSelectedValue = UILabel()
+//            var labelSelectedPoint = UILabel()
             
             let idMainPlot = "main_plot"
             let idSelectedPoint = "selected_point"
@@ -107,7 +109,6 @@ class TDGraphView: CPTGraphHostingView {
             plot.areaBaseValue = NSNumber(value: 2.0)
             plot.areaFill = CPTFill(color: CPTColor(cgColor: mainLineColor.cgColor))
             self.add(plot)
-            
             
             //zero line
             zeroLine.dataSource = graphDelegate as? CPTPlotDataSource
@@ -173,8 +174,6 @@ private extension TDGraphView {
     // MARK: - Defaults
     func setupDefaults() {
         
-        self.hostedGraph = graphLayer
-        graphLayer.defaultPlotSpace?.delegate = delegate as? CPTPlotSpaceDelegate
         graphLayer.mainLineColor = UIColor.yellow
         graphLayer.zeroLineColor = UIColor.yellow
         graphLayer.dotIndicatorColor = UIColor.yellow

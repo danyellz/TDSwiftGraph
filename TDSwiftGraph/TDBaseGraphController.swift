@@ -23,14 +23,8 @@ class TDGraphBaseViewController: UIViewController {
     var barButtonItem1Y = UIBarButtonItem()
     
     var viewContainerGraph = UIView()
-    
-    lazy var graphView: TDGraphView = {
-        let graph = TDGraphView()
-        graph.mainLineColor = UIColor.yellow
-        graph.delegate = self
-        return graph
-    }()
-    
+    var labelSelectedPoint = UILabel()
+    var graphView = CPTGraphHostingView()
     var userGraph = false
     
     var labelChartNotAvailable: UILabel = UILabel()
@@ -43,8 +37,7 @@ class TDGraphBaseViewController: UIViewController {
     
     var userNameLabel: UILabel = UILabel()
     var mainLabelView: UIView = UIView()
-    var labelMainSelectedValue = UILabel()
-    var labelSelectedPoint = UILabel()
+    var labelMainSelectedValue: UILabel = UILabel()
     
     var dataSource: TDGraphViewControllerDataSource?
     var data: (x:[Double], y:[Double], y1:[Double], balance:[Double]) = (x:[], y:[], y1:[], balance:[])
@@ -77,47 +70,117 @@ class TDGraphBaseViewController: UIViewController {
     
     var distance: Double = 0
     
-    let mainLineColor = CPTColor(componentRed: 38.0/255.0, green: 148.0/255.0, blue: 171.0/255.0, alpha: 1.0)
+    @IBInspectable var mainLineColor = CPTColor()
+    @IBInspectable var zeroLineColor = CPTColor()
+    @IBInspectable var dotIndicatorColor = CPTColor()
+    @IBInspectable var fillColor = CPTFill()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupGraphView()
-        
-//        labelMainSelectedValue.text = ""
-//        graph.defaultPlotSpace?.delegate = self
-        
-        maketBarItemSelected(index: 0)
+        setupDefaults()
+        configureGraph()
         getData()
     }
     
-    fileprivate func setupGraphView() {
-        view.sv(mainLabelView.sv(userNameLabel, labelMainSelectedValue,
-                                 labelSelectedPoint)
-        )
-        view.layout(
-            0,
-            |mainLabelView| ~ 130
-        )
+    fileprivate func configureGraph() {
         
-        mainLabelView.layout(
-            0,
-            |-userNameLabel-| ~ 20,
-            0,
-            |-labelMainSelectedValue-| ~ 65,
-            0,
-            |-labelSelectedPoint-| ~ 25
-        )
+        labelMainSelectedValue.font = UIFont.boldSystemFont(ofSize: 64)
+        labelMainSelectedValue.textColor = UIColor.blue
         
-        userNameLabel.backgroundColor = UIColor.darkGray
-        userNameLabel.textAlignment = .center
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
         
-        mainLabelView.backgroundColor = UIColor.darkGray
+        //        graph = CPTXYGraph(frame: CGRect(x: 0, y: 0, width: graphView.frame.width, height: graphView.frame.height))
+        graph.axisSet = nil
+        // hide paddings
+        graph.paddingLeft = 0.0
+        graph.paddingTop = 0.0
+        graph.paddingRight = 0.0
+        graph.paddingBottom = 0.0
         
-        labelMainSelectedValue.textAlignment = .center
-        labelSelectedPoint.textAlignment = .center
+        //Plot to fill area in 1D graph
+        hideousLine.dataSource = self
+        hideousLine.identifier = idHideous1DLine as (NSCoding & NSCopying & NSObjectProtocol)?
+        let hideousLineStyle = CPTMutableLineStyle()
+        hideousLineStyle.lineWidth = 2.5
+        hideousLineStyle.lineColor = CPTColor(componentRed: 0, green: 0, blue: 0, alpha: 0.0)
+        hideousLine.dataLineStyle = hideousLineStyle
+        hideousLine.areaBaseValue = NSNumber(value: 2.0)
+        hideousLine.areaBaseValue2 = NSNumber(value: -2.0)
+        hideousLine.areaFill = fillColor
+        graph.add(hideousLine)
+        
+        hideousLine2.dataSource = self
+        hideousLine2.identifier = idHideous1DLine as (NSCoding & NSCopying & NSObjectProtocol)?
+        let hideousLineStyle2 = CPTMutableLineStyle()
+        hideousLineStyle2.lineWidth = 2.5
+        hideousLineStyle2.lineColor = CPTColor(componentRed: 0, green: 0, blue: 0, alpha: 0.0)
+        hideousLine2.dataLineStyle = hideousLineStyle2
+        hideousLine2.areaBaseValue = NSNumber(value: -2.0)
+        hideousLine2.areaFill = fillColor
+        graph.add(hideousLine2)
+        
+        //main plot
+        let lineStyle = CPTMutableLineStyle()
+        lineStyle.lineWidth = 2.5
+        lineStyle.lineColor = mainLineColor
+        plot.identifier = idMainPlot as (NSCoding & NSCopying & NSObjectProtocol)?
+        plot.dataLineStyle = lineStyle
+        plot.dataSource = self
+        plot.delegate = self
+        plot.plotSymbolMarginForHitDetection = 10
+        plot.paddingLeft = 0.0
+        plot.paddingTop = 0.0
+        plot.paddingRight = 0.0
+        plot.paddingBottom = 0.0
+        plot.areaBaseValue = NSNumber(value: 2.0)
+        plot.areaFill = fillColor
+        graph.add(plot)
+        
+        
+        //zero line
+        zeroLine.dataSource = self
+        zeroLine.identifier = idZeroLine as (NSCoding & NSCopying & NSObjectProtocol)?
+        let zeroLineStyle = CPTMutableLineStyle()
+        zeroLineStyle.lineWidth = 2.5
+        zeroLineStyle.lineColor = mainLineColor
+        zeroLineStyle.dashPattern = [NSNumber(cgFloat: 3), NSNumber(cgFloat: 3)]
+        zeroLine.dataLineStyle = zeroLineStyle
+        graph.add(zeroLine)
+        
+        // Selection Marker Area
+        areaSelectionPlot.dataSource = self
+        areaSelectionPlot.identifier = idAreaSelectedPoint as (NSCoding & NSCopying & NSObjectProtocol)?
+        areaSelectionPlot.cachePrecision = CPTPlotCachePrecision.double
+        let lineAreaStyleSelectionPoint = CPTMutableLineStyle()
+        lineAreaStyleSelectionPoint.lineWidth = 0.0
+        lineAreaStyleSelectionPoint.lineColor = zeroLineColor
+        areaSelectionPlot.dataLineStyle = lineAreaStyleSelectionPoint
+        graph.add(self.areaSelectionPlot)
+        
+        // Selection Marker
+        selectionPlot.identifier = idSelectedPoint as (NSCoding & NSCopying & NSObjectProtocol)?
+        selectionPlot.cachePrecision = CPTPlotCachePrecision.double
+        let lineStyleSelectionPoint = CPTMutableLineStyle()
+        lineStyleSelectionPoint.lineWidth = 3.0
+        lineStyleSelectionPoint.lineColor = mainLineColor
+        selectionPlot.dataLineStyle = lineStyleSelectionPoint
+        selectionPlot.dataSource = self
+        graph.add(selectionPlot)
+        
+        graphView.hostedGraph = graph
+        if !fromWatchlist{
+            maketBarItemSelected(index: 0)
+        }else{
+            selectedDataIndex = CustomTimeInterval.Year
+            maketBarItemSelected(index: 4)
+            
+        }
+        
+        labelMainSelectedValue.text = ""
+        graph.defaultPlotSpace?.delegate = self
     }
-
     
     func maketBarItemSelected(index: Int) -> Void {
         barButtonItem1D.tintColor = UIColor.white
@@ -145,6 +208,34 @@ class TDGraphBaseViewController: UIViewController {
             break
         }
     }
+    
+    func setupGraphView() {
+        view.sv(mainLabelView.sv(userNameLabel, labelMainSelectedValue,
+                                 labelSelectedPoint)
+        )
+        view.layout(
+            0,
+            |mainLabelView| ~ 130
+        )
+        
+        mainLabelView.layout(
+            0,
+            |-userNameLabel-| ~ 20,
+            0,
+            |-labelMainSelectedValue-| ~ 65,
+            0,
+            |-labelSelectedPoint-| ~ 25
+        )
+        
+        userNameLabel.backgroundColor = UIColor.darkGray
+        userNameLabel.textAlignment = .center
+        
+        mainLabelView.backgroundColor = UIColor.darkGray
+        
+        labelMainSelectedValue.textAlignment = .center
+        labelSelectedPoint.textAlignment = .center
+    }
+    
     
     func setRangeForGraph(){
         // Get the (default) plotspace from the graph so we can set its x/y ranges
@@ -253,7 +344,7 @@ class TDGraphBaseViewController: UIViewController {
             } else {
                 self.labelChartNotAvailable.isHidden = false
                 self.selectedIndex = nil
-//                self.graphView.isHidden = true
+                self.graphView.isHidden = true
             }
             //            }
         }
@@ -265,7 +356,6 @@ class TDGraphBaseViewController: UIViewController {
         //$8.27 | 0.00 | 0.00% 11/17/15, 04:01 PM
         
     }
-    
 }
 
 extension TDGraphBaseViewController : CPTScatterPlotDataSource {
@@ -340,8 +430,6 @@ extension TDGraphBaseViewController : CPTScatterPlotDelegate {
     }
     
     func symbol(for plot: CPTScatterPlot, record idx: UInt) -> CPTPlotSymbol? {
-        print("TRIGGERED: \(plot.identifier)")
-        
         let lineAreaStyleSelectionPoint = CPTMutableLineStyle()
         lineAreaStyleSelectionPoint.lineWidth = 0.0
         lineAreaStyleSelectionPoint.lineColor = CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0)
@@ -366,48 +454,19 @@ extension TDGraphBaseViewController : CPTScatterPlotDelegate {
         
         return nil
     }
-    
-    func symbolForScatterPlot(plot: CPTPlot!, recordIndex: UInt) -> CPTPlotSymbol? {
-        print("TRIGGERED: \(plot.identifier)")
-        
-        let lineAreaStyleSelectionPoint           = CPTMutableLineStyle()
-        lineAreaStyleSelectionPoint.lineWidth     = 0.0
-        lineAreaStyleSelectionPoint.lineColor     = CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0)
-        
-        if plot.identifier as! String  == idSelectedPoint && recordIndex == 0 {
-            let res = CPTPlotSymbol()
-            res.symbolType = CPTPlotSymbolType.ellipse
-            res.size = CGSize(width: 12, height: 12)
-            res.lineStyle = lineAreaStyleSelectionPoint
-            //            res.fill = CPTFill(color: CPTColor(componentRed: 38.0/255.0, green: 148.0/255.0, blue: 171.0/255.0, alpha: 1.0))
-            res.fill = CPTFill(color: CPTColor(cgColor: UIColor.red.cgColor))
-            return res
-        }
-        
-        if plot.identifier as! String  == idAreaSelectedPoint && recordIndex == 0 {
-            let res = CPTPlotSymbol()
-            res.symbolType = CPTPlotSymbolType.ellipse
-            res.size = CGSize(width: 24, height: 24)
-            //            res.fill = CPTFill(color: CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0))
-            res.fill = CPTFill(color: CPTColor(cgColor: UIColor.red.cgColor))
-            res.lineStyle = lineAreaStyleSelectionPoint
-            return res
-        }
-        
-        return nil
-    }
-    
 }
 
 extension TDGraphBaseViewController : CPTPlotSpaceDelegate {
     
     func plotSpace(_ space: CPTPlotSpace, shouldHandlePointingDeviceDraggedEvent event: UIEvent, at point: CGPoint) -> Bool {
-        print("TRIGGERED: ")
-        
         if let p = space.plotPoint(forPlotAreaViewPoint: point), p.count > 0 {
-            let idx = UInt(round(Double(p[0])))
-            if idx < UInt(data.x.count) {
-                self.makeSelection(plot: plot, plotSymbolWasSelectedAtRecordIndex: idx)
+            
+            if let idx = round(Double(p[0])) as? Double, idx > 0 {
+                
+                let index = UInt(idx)
+                if index < UInt(data.x.count) {
+                    self.makeSelection(plot: plot, plotSymbolWasSelectedAtRecordIndex: index)
+                }
             }
         }
         return true
@@ -441,5 +500,22 @@ extension TDGraphBaseViewController : CPTPlotSpaceDelegate {
             }
             formatLabelSelectedPoint(showDate: false)
         }
+    }
+}
+
+
+private extension TDGraphBaseViewController {
+    
+    // MARK: - Defaults
+    func setupDefaults() {
+        
+        let defaultBlue = CPTColor(componentRed: 38.0/255.0, green: 148.0/255.0, blue: 171.0/255.0, alpha: 1.0)
+        let defaultWhiteFill = CPTFill(color: CPTColor(cgColor: UIColor.white.cgColor))
+        
+        mainLineColor = defaultBlue
+        zeroLineColor = defaultBlue
+        dotIndicatorColor = defaultBlue
+        fillColor = defaultWhiteFill
+        
     }
 }
