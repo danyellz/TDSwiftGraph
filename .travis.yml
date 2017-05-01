@@ -1,4 +1,15 @@
-language: objective-c
 osx_image: xcode8
-xcode_project: TDSwiftGraph.xcodeproj
-xcode_scheme: TDSwiftGraph
+rvm:
+  - 2.2.2
+language: objective-c
+before_install: 
+  - gem install cocoapods -v '1.1.0.rc.2' -N
+  - pod repo update
+  - gem install xcpretty slather -N
+  - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
+cache: cocoapods
+podfile: TDSwiftGraph/Podfile
+script:
+  - set -o pipefail && xcodebuild test -workspace TDSwiftGraph/TDSwiftGraph.xcworkspace -scheme "TDSwiftGraph" -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
+after_success:
+  - slather coverage --ignore "../**/*/Xcode*" --scheme "TDSwiftGraph" --workspace example/TDSwiftGraph.xcworkspace example/TDSwiftGraph.xcodeproj
