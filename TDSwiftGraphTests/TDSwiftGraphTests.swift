@@ -11,9 +11,18 @@ import XCTest
 
 class TDSwiftGraphTests: XCTestCase {
     
+    var newGraph = TDGraphNewController()
+    var data: (x:[Double], y:[Double], y1:[Double], balance:[Double]) = (x:[], y:[], y1:[], balance:[]) {
+        didSet {
+            testAdequatePlotData() // Run this XCtest once data is available
+        }
+    }
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        newGraph.dataSource = self
+        newGraph.getData()
     }
     
     override func tearDown() {
@@ -21,16 +30,43 @@ class TDSwiftGraphTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAdequatePlotData() {
+        
+        XCTAssertGreaterThan(data.x.count, 0, "Adequate timeAgo values for graph configuration")
+        XCTAssertGreaterThan(data.y.count, 0, "Adequate +/- values for graph configuration")
+        XCTAssertGreaterThan(data.y1.count, 0, "Adequate Y1 values for graph configuration")
+        XCTAssertGreaterThan(data.balance.count, 0, "Adequate balance values for graph configuration")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+}
+
+extension TDSwiftGraphTests: TDGraphViewControllerDataSource {
+    
+    func dataForGraph(section: Int, completionHandler: @escaping ((x: [Double],
+        y: [Double],
+        y1: [Double],
+        balance: [Double]),
+        Bool) -> Void) {
+        
+        // NOTE: - Spoofed data
+        
+        var xArr = [Double]()
+        var yArr = [Double]()
+        var yyArr = [Double]()
+        var balanceArr = [Double]()
+        for _ in 0..<40 { // Plot 40 random data points
+            let x = NSDate().timeAgoForFeed
+            let y = 1 * Double(arc4random()) / Double(UInt32.max)
+            let bal = Double(arc4random_uniform(UInt32(25.00)))
+            xArr.append(NSDate().timeIntervalSince1970)
+            yArr.append(y)
+            yyArr.append(0.0)
+            balanceArr.append(bal)
+            
+            print("COORD: x:\(x), y:\(y), bal: \(bal)")
         }
+        
+        let dataArr = (x: xArr, y: yArr, y1: yyArr, balance: balanceArr)
+        data = dataArr
     }
-    
 }
