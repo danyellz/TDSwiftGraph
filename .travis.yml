@@ -1,6 +1,5 @@
-osx_image: xcode8
 language: objective-c
-  - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
-  - gem install xcpretty slather -N
-cache: cocoapods
-podfile: TDSwiftGraph/Podfile
+osx_image: xcode8
+xcode_project: TDSwiftGraph.xcworkspace
+xcode_scheme: TDSwiftGraph
+xcode_sdk: iphonesimulator8.4
