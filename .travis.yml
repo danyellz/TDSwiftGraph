@@ -7,5 +7,3 @@ language: objective-c
   - gem install xcpretty slather -N
 cache: cocoapods
 podfile: TDSwiftGraph/Podfile
-script:
-  - set -o pipefail && xcodebuild test -workspace TDSwiftGraph/TDSwiftGraph.xcworkspace -scheme "TDSwiftGraph" -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
