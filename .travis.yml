@@ -2,4 +2,3 @@ language: objective-c
 osx_image: xcode8
 xcode_project: TDSwiftGraph.xcworkspace
 xcode_scheme: TDSwiftGraph
-xcode_sdk: iphonesimulator8.4
