@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode8
-xcode_project: TDSwiftGraph.xcworkspace
+xcode_project: TDSwiftGraph.xcodeproj
 xcode_scheme: TDSwiftGraph
