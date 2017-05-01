@@ -1,6 +1,4 @@
 osx_image: xcode8
-rvm:
-  - 2.2.2
 language: objective-c
   - pod repo update
   - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
