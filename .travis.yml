@@ -1,5 +1,10 @@
 osx_image: xcode8
+rvm:
+  - 2.2.2
 language: objective-c
-xcode_project: TDSwiftGraph.xcodeproj
-xcode_scheme: TDSwiftGraph
-xcode_sdk: iphonesimulator10.0
+  - pod repo update
+  - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
+cache: cocoapods
+podfile: TDSwiftGraph/Podfile
+script:
+  - set -o pipefail && xcodebuild test -workspace TDSwiftGraph/TDSwiftGraph.xcworkspace -scheme "TDSwiftGraph" -destination "platform=iOS Simulator,name=iPhone 6,OS=10.0" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
