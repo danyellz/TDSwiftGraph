@@ -4,6 +4,7 @@ rvm:
 language: objective-c
   - pod repo update
   - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
+  - gem install xcpretty slather -N
 cache: cocoapods
 podfile: TDSwiftGraph/Podfile
 script:
