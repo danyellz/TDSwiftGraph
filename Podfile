@@ -1,22 +1,30 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+  # ignore all warnings from all pods
+  inhibit_all_warnings!
 
-target 'TDSwiftGraph' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for TDSwiftGraph
-  pod ‘SteviaLayout’
-  pod ‘CorePlot’
+  project ‘TDSwiftGraph’
 
-  target 'TDSwiftGraphTests' do
+  target 'TDSwiftGraph' do
+  
+    pod ‘SteviaLayout’
+    pod ‘CorePlot’
+
+  target 'TDSwiftGraphTests’ do
     inherit! :search_paths
-    # Pods for testing
-  end
 
-  target 'TDSwiftGraphUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    # Tests
+    pod 'Quick'
+    pod 'Nimble'
 
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
+  end
 end
