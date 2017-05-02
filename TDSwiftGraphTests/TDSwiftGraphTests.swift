@@ -6,59 +6,14 @@
 //  Copyright © 2017 Ty Daniels. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
+
 @testable import TDSwiftGraph
 
-class TDSwiftGraphTests: XCTestCase {
+class RPCircularProgressTests: QuickSpec {
     
-    var newGraph = TDGraphNewController()
-    var data: (x:[Double], y:[Double], y1:[Double], balance:[Double]) = (x:[], y:[], y1:[], balance:[])
-    
-    override func setUp() {
-        super.setUp()
+    override func spec() {
         
-//        newGraph.dataSource = self
-//        newGraph.getData()
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testAdequatePlotData() {
-        
-    }
-    
-}
-
-extension TDSwiftGraphTests: TDGraphViewControllerDataSource {
-    
-    func dataForGraph(section: Int, completionHandler: @escaping ((x: [Double],
-        y: [Double],
-        y1: [Double],
-        balance: [Double]),
-        Bool) -> Void) {
-        
-        // NOTE: - Spoofed data
-        
-        var xArr = [Double]()
-        var yArr = [Double]()
-        var yyArr = [Double]()
-        var balanceArr = [Double]()
-        for _ in 0..<40 { // Plot 40 random data points
-            let x = NSDate().timeAgoForFeed
-            let y = 1 * Double(arc4random()) / Double(UInt32.max)
-            let bal = Double(arc4random_uniform(UInt32(25.00)))
-            xArr.append(NSDate().timeIntervalSince1970)
-            yArr.append(y)
-            yyArr.append(0.0)
-            balanceArr.append(bal)
-            
-            print("COORD: x:\(x), y:\(y), bal: \(bal)")
-        }
-        
-        let dataArr = (x: xArr, y: yArr, y1: yyArr, balance: balanceArr)
-        data = dataArr
     }
 }

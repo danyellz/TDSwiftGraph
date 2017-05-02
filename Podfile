@@ -1,6 +1,9 @@
+  source 'https://github.com/CocoaPods/Specs.git'
+
   # ignore all warnings from all pods
   inhibit_all_warnings!
 
+  #use swift frameworks
   use_frameworks!
 
   # Pods for TDSwiftGraph
@@ -14,10 +17,8 @@
   target 'TDSwiftGraphTests’ do
     inherit! :search_paths
 
-    # Tests
-    pod 'Quick'
-    pod 'Nimble'
-
+    pod 'Quick', :git => 'https://github.com/Quick/Quick.git'
+    pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git'
   end
 end
 

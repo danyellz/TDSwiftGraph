@@ -6,16 +6,30 @@ PODS:
 
 DEPENDENCIES:
   - CorePlot
-  - Nimble
-  - Quick
+  - Nimble (from `https://github.com/Quick/Nimble.git`)
+  - Quick (from `https://github.com/Quick/Quick.git`)
   - SteviaLayout
+
+EXTERNAL SOURCES:
+  Nimble:
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :git: https://github.com/Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 199d3185c981b9d98f1e0f9664a4df51f4ace16b
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :commit: 4bfde847a382fef9e9b5809441da9b75ac29e32f
+    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
-  Nimble: c53e6903fee94041b90ded74f135820437d8bf59
-  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  Nimble: 46fc2a2c3f2f5bb5e2d7e89756fb710c1457f27a
+  Quick: 4700beb8056662b579facd79eaca7f04fb3d48e6
   SteviaLayout: 807c742a8e4bcb94f47f018b23873a40f1f1cc1d
 
-PODFILE CHECKSUM: b5eebc398fb5c49cef4eaaea9d094b3f66676265
+PODFILE CHECKSUM: d7d269a047834045d787887e33f8f8e42efe0d00
 
 COCOAPODS: 1.2.1
