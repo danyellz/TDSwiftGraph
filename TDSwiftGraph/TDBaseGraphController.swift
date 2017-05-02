@@ -429,31 +429,31 @@ extension TDGraphBaseViewController : CPTScatterPlotDelegate {
         //        self.makeSelection(plot: plot, plotSymbolWasSelectedAtRecordIndex: idx)
     }
     
-    @objc func symbol(for plot: CPTScatterPlot, record idx: UInt) -> CPTPlotSymbol? {
-        let lineAreaStyleSelectionPoint = CPTMutableLineStyle()
-        lineAreaStyleSelectionPoint.lineWidth = 0.0
-        lineAreaStyleSelectionPoint.lineColor = CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0)
-        
-        if plot.identifier as! String  == idSelectedPoint && idx == 0 {
-            let res = CPTPlotSymbol()
-            res.symbolType = CPTPlotSymbolType.ellipse
-            res.size = CGSize(width: 12, height: 12)
-            res.lineStyle = lineAreaStyleSelectionPoint
-            res.fill = CPTFill(color: CPTColor(componentRed: 38.0/255.0, green: 148.0/255.0, blue: 171.0/255.0, alpha: 1.0))
-            return res
-        }
-        
-        if plot.identifier as! String  == idAreaSelectedPoint && idx == 0 {
-            let res = CPTPlotSymbol()
-            res.symbolType = CPTPlotSymbolType.ellipse
-            res.size = CGSize(width: 24, height: 24)
-            res.fill = CPTFill(color: CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0))
-            res.lineStyle = lineAreaStyleSelectionPoint
-            return res
-        }
-        
-        return nil
-    }
+//    func symbol(for plot: CPTScatterPlot, record idx: UInt) -> CPTPlotSymbol? {
+//        let lineAreaStyleSelectionPoint = CPTMutableLineStyle()
+//        lineAreaStyleSelectionPoint.lineWidth = 0.0
+//        lineAreaStyleSelectionPoint.lineColor = CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0)
+//        
+//        if plot.identifier as! String  == idSelectedPoint && idx == 0 {
+//            let res = CPTPlotSymbol()
+//            res.symbolType = CPTPlotSymbolType.ellipse
+//            res.size = CGSize(width: 12, height: 12)
+//            res.lineStyle = lineAreaStyleSelectionPoint
+//            res.fill = CPTFill(color: CPTColor(componentRed: 38.0/255.0, green: 148.0/255.0, blue: 171.0/255.0, alpha: 1.0))
+//            return res
+//        }
+//        
+//        if plot.identifier as! String  == idAreaSelectedPoint && idx == 0 {
+//            let res = CPTPlotSymbol()
+//            res.symbolType = CPTPlotSymbolType.ellipse
+//            res.size = CGSize(width: 24, height: 24)
+//            res.fill = CPTFill(color: CPTColor(componentRed: 5.0/255.0, green: 37.0/255.0, blue: 49.0/255.0, alpha: 1.0))
+//            res.lineStyle = lineAreaStyleSelectionPoint
+//            return res
+//        }
+//        
+//        return nil
+//    }
 }
 
 extension TDGraphBaseViewController : CPTPlotSpaceDelegate {
