@@ -12,17 +12,13 @@ import XCTest
 class TDSwiftGraphTests: XCTestCase {
     
     var newGraph = TDGraphNewController()
-    var data: (x:[Double], y:[Double], y1:[Double], balance:[Double]) = (x:[], y:[], y1:[], balance:[]) {
-        didSet {
-            testAdequatePlotData() // Run this XCtest once data is available
-        }
-    }
+    var data: (x:[Double], y:[Double], y1:[Double], balance:[Double]) = (x:[], y:[], y1:[], balance:[])
     
     override func setUp() {
         super.setUp()
         
-        newGraph.dataSource = self
-        newGraph.getData()
+//        newGraph.dataSource = self
+//        newGraph.getData()
     }
     
     override func tearDown() {
@@ -32,10 +28,6 @@ class TDSwiftGraphTests: XCTestCase {
     
     func testAdequatePlotData() {
         
-        XCTAssertGreaterThan(data.x.count, 0, "Adequate timeAgo values for graph configuration")
-        XCTAssertGreaterThan(data.y.count, 0, "Adequate +/- values for graph configuration")
-        XCTAssertGreaterThan(data.y1.count, 0, "Adequate Y1 values for graph configuration")
-        XCTAssertGreaterThan(data.balance.count, 0, "Adequate balance values for graph configuration")
     }
     
 }
