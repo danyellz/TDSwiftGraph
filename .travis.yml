@@ -7,6 +7,6 @@ before_install:
 cache: cocoapods
 podfile: TDSwiftGraph/Podfile
 script:
-  - set -o pipefail && xcodebuild test -workspace TDSwiftGraph.xcworkspace -scheme "TDSwiftGraph" -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
+  - set -o pipefail && - travis_retry xcodebuild test -workspace TDSwiftGraph.xcworkspace -scheme "TDSwiftGraph" -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0' -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
 after_success:
   - slather coverage --ignore "../**/*/Xcode*" --scheme "TDSwiftGraph" --workspace TDSwiftGraph.xcworkspace TDSwiftGraph.xcodeproj
