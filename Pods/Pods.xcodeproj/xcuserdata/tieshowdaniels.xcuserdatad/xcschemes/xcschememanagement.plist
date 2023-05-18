@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Nimble.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TDSwiftGraph.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TDSwiftGraphUITests.xcscheme</key>
+		<key>Quick.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>593C6BAA0CD277919EE598D9310D5819</key>
+		<key>267AAF42FA2320B4D707CBFFE0C7740B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>922CD98714BF864FDB350AF3D56E4705</key>
+		<key>BBB75F02D96D36EF4729C76A05D42A94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBB75F02D96D36EF4729C76A05D42A94</key>
+		<key>CDB99AE7E4FF7FBDA2FF8D31B87ADB7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD7C8BF89FE8053D0A2A2D88BB49CF07</key>
 		<dict>
 			<key>primary</key>
 			<true/>

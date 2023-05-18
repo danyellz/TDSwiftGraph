@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		744E88058378A897963E502E /* Pods_TDSwiftGraphUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A631DB0B3D30768F37E8FDB0 /* Pods_TDSwiftGraphUITests.framework */; };
 		984AD5A16C5332AF69875C46 /* Pods_TDSwiftGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06137B85B1C51716620D0AFB /* Pods_TDSwiftGraph.framework */; };
-		E45BE37D6ADBC89D811A5862 /* Pods_TDSwiftGraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90548109F85E652B6E33488 /* Pods_TDSwiftGraphTests.framework */; };
+		B9CF374BDFEAFC27AB7A7277 /* Pods_TDSwiftGraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90548109F85E652B6E33488 /* Pods_TDSwiftGraphTests.framework */; };
 		EDCC09B71EA5B8980098E7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09B61EA5B8980098E7E2 /* AppDelegate.swift */; };
 		EDCC09B91EA5B8980098E7E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC09B81EA5B8980098E7E2 /* ViewController.swift */; };
 		EDCC09BC1EA5B8980098E7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCC09BA1EA5B8980098E7E2 /* Main.storyboard */; };
@@ -47,13 +46,11 @@
 
 /* Begin PBXFileReference section */
 		06137B85B1C51716620D0AFB /* Pods_TDSwiftGraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDSwiftGraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1456E577A131967C2C0A9F6C /* Pods-TDSwiftGraphUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphUITests/Pods-TDSwiftGraphUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2C6743B5DA433EBF903BF296 /* Pods-TDSwiftGraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests.release.xcconfig"; sourceTree = "<group>"; };
 		53548C3AA8E180BD85699108 /* Pods-TDSwiftGraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraph.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraph/Pods-TDSwiftGraph.debug.xcconfig"; sourceTree = "<group>"; };
-		631E9E7F793C100B74BCF1B9 /* Pods-TDSwiftGraphUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphUITests/Pods-TDSwiftGraphUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E7BFCE8F8B5A328A3EEF49C /* Pods-TDSwiftGraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests.release.xcconfig"; sourceTree = "<group>"; };
 		99E35F4F4AF9C4F436B84D09 /* Pods-TDSwiftGraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraph.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraph/Pods-TDSwiftGraph.release.xcconfig"; sourceTree = "<group>"; };
 		A631DB0B3D30768F37E8FDB0 /* Pods_TDSwiftGraphUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDSwiftGraphUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2436524B776E1427599E0C8 /* Pods-TDSwiftGraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACE56464B2C0FB99EE8DD7D9 /* Pods-TDSwiftGraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDSwiftGraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C90548109F85E652B6E33488 /* Pods_TDSwiftGraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDSwiftGraphTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC09B31EA5B8980098E7E2 /* TDSwiftGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDSwiftGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCC09B61EA5B8980098E7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45BE37D6ADBC89D811A5862 /* Pods_TDSwiftGraphTests.framework in Frameworks */,
+				B9CF374BDFEAFC27AB7A7277 /* Pods_TDSwiftGraphTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				744E88058378A897963E502E /* Pods_TDSwiftGraphUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,10 +111,8 @@
 			children = (
 				53548C3AA8E180BD85699108 /* Pods-TDSwiftGraph.debug.xcconfig */,
 				99E35F4F4AF9C4F436B84D09 /* Pods-TDSwiftGraph.release.xcconfig */,
-				C2436524B776E1427599E0C8 /* Pods-TDSwiftGraphTests.debug.xcconfig */,
-				2C6743B5DA433EBF903BF296 /* Pods-TDSwiftGraphTests.release.xcconfig */,
-				1456E577A131967C2C0A9F6C /* Pods-TDSwiftGraphUITests.debug.xcconfig */,
-				631E9E7F793C100B74BCF1B9 /* Pods-TDSwiftGraphUITests.release.xcconfig */,
+				ACE56464B2C0FB99EE8DD7D9 /* Pods-TDSwiftGraphTests.debug.xcconfig */,
+				6E7BFCE8F8B5A328A3EEF49C /* Pods-TDSwiftGraphTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -247,12 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDCC09DE1EA5B8990098E7E2 /* Build configuration list for PBXNativeTarget "TDSwiftGraphTests" */;
 			buildPhases = (
-				1CFF264A92A0EF2E3AD49EA9 /* [CP] Check Pods Manifest.lock */,
+				1E685A9FE554E9CAC1447E66 /* [CP] Check Pods Manifest.lock */,
 				EDCC09C31EA5B8990098E7E2 /* Sources */,
 				EDCC09C41EA5B8990098E7E2 /* Frameworks */,
 				EDCC09C51EA5B8990098E7E2 /* Resources */,
-				0483ECB14A2D7EE5044FFCF1 /* [CP] Embed Pods Frameworks */,
-				8123EA07E3815FE484997B02 /* [CP] Copy Pods Resources */,
+				6BC5021BAC381B95E25358D8 /* [CP] Embed Pods Frameworks */,
+				BD3DE63D248ECB486B2A1400 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,12 +262,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDCC09E11EA5B8990098E7E2 /* Build configuration list for PBXNativeTarget "TDSwiftGraphUITests" */;
 			buildPhases = (
-				5F592704EBA2BC97DD933E35 /* [CP] Check Pods Manifest.lock */,
 				EDCC09CE1EA5B8990098E7E2 /* Sources */,
 				EDCC09CF1EA5B8990098E7E2 /* Frameworks */,
 				EDCC09D01EA5B8990098E7E2 /* Resources */,
-				AD9CBA53264A3C961866067D /* [CP] Embed Pods Frameworks */,
-				5C24426A9B0F5B3FE3031DDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,22 +350,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0483ECB14A2D7EE5044FFCF1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1CFF264A92A0EF2E3AD49EA9 /* [CP] Check Pods Manifest.lock */ = {
+		1E685A9FE554E9CAC1447E66 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -404,21 +380,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraph/Pods-TDSwiftGraph-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C24426A9B0F5B3FE3031DDA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraphUITests/Pods-TDSwiftGraphUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5E6EA15A9E05D2682FF77E91 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,22 +395,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraph/Pods-TDSwiftGraph-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F592704EBA2BC97DD933E35 /* [CP] Check Pods Manifest.lock */ = {
+		6BC5021BAC381B95E25358D8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8123EA07E3815FE484997B02 /* [CP] Copy Pods Resources */ = {
+		BD3DE63D248ECB486B2A1400 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,21 +423,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraphTests/Pods-TDSwiftGraphTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD9CBA53264A3C961866067D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TDSwiftGraphUITests/Pods-TDSwiftGraphUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F11C2E3E9EE49C20C694A4D2 /* [CP] Check Pods Manifest.lock */ = {
@@ -665,10 +611,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TDSwiftGraph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.graph.TDSwiftGraph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -678,16 +626,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TDSwiftGraph/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.graph.TDSwiftGraph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		EDCC09DF1EA5B8990098E7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2436524B776E1427599E0C8 /* Pods-TDSwiftGraphTests.debug.xcconfig */;
+			baseConfigurationReference = ACE56464B2C0FB99EE8DD7D9 /* Pods-TDSwiftGraphTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -702,7 +652,7 @@
 		};
 		EDCC09E01EA5B8990098E7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C6743B5DA433EBF903BF296 /* Pods-TDSwiftGraphTests.release.xcconfig */;
+			baseConfigurationReference = 6E7BFCE8F8B5A328A3EEF49C /* Pods-TDSwiftGraphTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -717,7 +667,6 @@
 		};
 		EDCC09E21EA5B8990098E7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1456E577A131967C2C0A9F6C /* Pods-TDSwiftGraphUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TDSwiftGraphUITests/Info.plist;
@@ -731,7 +680,6 @@
 		};
 		EDCC09E31EA5B8990098E7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 631E9E7F793C100B74BCF1B9 /* Pods-TDSwiftGraphUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = TDSwiftGraphUITests/Info.plist;
